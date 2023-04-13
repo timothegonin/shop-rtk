@@ -1,3 +1,4 @@
+import { useState } from "react";
 import phone from "../../../images/phone.png";
 import tablet from "../../../images/tablet.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +8,9 @@ function PhoneView() {
 	const { phones, tablets } = useSelector((state) => state.phone);
 	const dispatch = useDispatch();
 
+	const [tabletNum, setTabletNum] = useState(1);
+	const [phoneNum, setPhoneNum] = useState(1);
+
 	return (
 		<>
 			<div className="container">
@@ -15,7 +19,14 @@ function PhoneView() {
 					Disponibilité: <span className="count">{phones}</span>
 				</p>
 				<div className="btnContainer">
-					<button onClick={() => dispatch(phonesAction())}>Acheter</button>
+					<button onClick={() => dispatch(phonesAction(phoneNum))}>
+						Acheter
+					</button>
+					<input
+						type="number"
+						value={phoneNum}
+						onChange={(e) => setPhoneNum(e.target.value)}
+					/>
 				</div>
 			</div>
 			<div className="container">
@@ -24,7 +35,14 @@ function PhoneView() {
 					Disponibilité: <span className="count">{tablets}</span>
 				</p>
 				<div className="btnContainer">
-					<button onClick={() => dispatch(tabletsAction(2))}>Acheter</button>
+					<button onClick={() => dispatch(tabletsAction(tabletNum))}>
+						Acheter
+					</button>
+					<input
+						type="number"
+						value={tabletNum}
+						onChange={(e) => setTabletNum(e.target.value)}
+					/>
 				</div>
 			</div>
 		</>

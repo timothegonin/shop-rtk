@@ -8,9 +8,9 @@ const tvSlice = createSlice({
 	name: "tv",
 	initialState,
 	reducers: {
-		tvs: (state) => {
-			// Action {type: 'tv/tvs', payload: undefined}
-			state.tvs--;
+		tvs: (state, action) => {
+			// Action {type: 'tv/tvs', payload: number}
+			state.tvs -= action.payload;
 		},
 	},
 });

@@ -10,9 +10,9 @@ const phoneSlice = createSlice({
 	name: "phone",
 	initialState,
 	reducers: {
-		phones: (state) => {
-			// Action {type: 'phone/phones', payload: undefined}
-			state.phones--;
+		phones: (state, action) => {
+			// Action {type: 'phone/phones', payload: number}
+			state.phones -= action.payload;
 		},
 		tablets: (state, action) => {
 			// Action {type: 'phone/tablets', payload: number}
@@ -20,8 +20,8 @@ const phoneSlice = createSlice({
 		},
 	},
 	extraReducers: (builder) => {
-		builder.addCase(tvActions, (state) => {
-			state.phones--;
+		builder.addCase(tvActions, (state, action) => {
+			state.phones -= action.payload;
 		});
 	},
 	// ALT
