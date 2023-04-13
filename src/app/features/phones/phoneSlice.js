@@ -19,6 +19,12 @@ const phoneSlice = createSlice({
 			state.phones--;
 		});
 	},
+	// ALT
+	// extraReducers: {
+	// 	["tv/tvs"]: (state) => {
+	// 		state.phones--;
+	// 	},
+	// },
 });
 
 export default phoneSlice.reducer;
