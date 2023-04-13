@@ -3,6 +3,7 @@ import { tvs as tvActions } from "../tvs/tvSlice";
 
 const initialState = {
 	phones: 5,
+	tablets: 10,
 };
 
 const phoneSlice = createSlice({
@@ -12,6 +13,10 @@ const phoneSlice = createSlice({
 		phones: (state) => {
 			// Action {type: 'phone/phones', payload: undefined}
 			state.phones--;
+		},
+		tablets: (state, action) => {
+			// Action {type: 'phone/tablets', payload: number}
+			state.tablets -= action.payload;
 		},
 	},
 	extraReducers: (builder) => {
@@ -28,4 +33,4 @@ const phoneSlice = createSlice({
 });
 
 export default phoneSlice.reducer;
-export const { phones } = phoneSlice.actions;
+export const { phones, tablets } = phoneSlice.actions;

@@ -8,7 +8,7 @@ function TvView() {
 
 	return (
 		<div className="container">
-			<img src={tv} alt="phone" />
+			<img src={tv} alt="tv" />
 			<p>
 				Disponibilité: <span className="count">{tvs}</span>
 			</p>
