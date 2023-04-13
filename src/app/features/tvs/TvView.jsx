@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { tvs as tvsAction } from "./tvSlice";
 
 function TvView() {
-	const { tvs } = useSelector((state) => state.tv);
+	const { tvs } = useSelector((state) => state.television);
 	const dispatch = useDispatch();
 
 	return (

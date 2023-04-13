@@ -5,7 +5,7 @@ import tvsReducer from "./features/tvs/tvSlice";
 const store = configureStore({
 	reducer: {
 		phone: phonesReducer,
-		tv: tvsReducer,
+		television: tvsReducer,
 	},
 });
 
