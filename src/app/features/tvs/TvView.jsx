@@ -19,6 +19,7 @@ function TvView() {
 				<button onClick={() => dispatch(tvsAction(tvNum))}>Acheter</button>
 				<input
 					type="number"
+					min="1"
 					value={tvNum}
 					onChange={(e) => setTvNum(e.target.value)}
 				/>

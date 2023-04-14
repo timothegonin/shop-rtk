@@ -24,6 +24,7 @@ function PhoneView() {
 					</button>
 					<input
 						type="number"
+						min="1"
 						value={phoneNum}
 						onChange={(e) => setPhoneNum(e.target.value)}
 					/>
@@ -40,6 +41,7 @@ function PhoneView() {
 					</button>
 					<input
 						type="number"
+						min="1"
 						value={tabletNum}
 						onChange={(e) => setTabletNum(e.target.value)}
 					/>
