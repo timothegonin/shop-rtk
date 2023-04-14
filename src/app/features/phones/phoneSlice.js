@@ -14,9 +14,17 @@ const phoneSlice = createSlice({
 			// Action {type: 'phone/phones', payload: number}
 			state.phones -= action.payload;
 		},
+		addPhones: (state, action) => {
+			// Action {type: 'phone/addPhones', payload: any}
+			state.phones += action.payload;
+		},
 		tablets: (state, action) => {
 			// Action {type: 'phone/tablets', payload: number}
 			state.tablets -= action.payload;
+		},
+		addTablets: (state, action) => {
+			// Action {type: 'phone/addTablets', payload: any}
+			state.tablets += action.payload;
 		},
 	},
 	extraReducers: (builder) => {
@@ -33,4 +41,4 @@ const phoneSlice = createSlice({
 });
 
 export default phoneSlice.reducer;
-export const { phones, tablets } = phoneSlice.actions;
+export const { phones, addPhones, tablets, addTablets } = phoneSlice.actions;
