@@ -5,6 +5,7 @@ import {
 	addPhones as addPhonesAction,
 	addTablets as addTabletsAction,
 } from "../phones/phoneSlice";
+import { addTvs as addTvsAction } from "../tvs/tvSlice";
 
 const container = {
 	width: "300px",
@@ -24,6 +25,7 @@ const AdminView = () => {
 
 	const [phoneNum, setPhoneNum] = useState(1);
 	const [tabletNum, setTabletNum] = useState(1);
+	const [tvNum, setTvNum] = useState(1);
 
 	return (
 		<div style={container}>
@@ -53,15 +55,22 @@ const AdminView = () => {
 					onChange={(e) => setTabletNum(e.target.value)}
 				/>
 				<button
-					onClick={(e) => dispatch(addTabletsAction(parseInt(tabletNum, 10)))}
+					onClick={() => dispatch(addTabletsAction(parseInt(tabletNum, 10)))}
 				>
 					Augmenter Stock
 				</button>
 			</div>
 			<StockInfos product="Télévisions" stock={television.tvs} />
 			<div style={btnContainer}>
-				<input type="number" min="1" value="" />
-				<button>Augmenter Stock</button>
+				<input
+					type="number"
+					min="1"
+					value={tvNum}
+					onChange={(e) => setTvNum(e.target.value)}
+				/>
+				<button onClick={() => dispatch(addTvsAction(parseInt(tvNum, 10)))}>
+					Augmenter Stock
+				</button>
 			</div>
 		</div>
 	);
