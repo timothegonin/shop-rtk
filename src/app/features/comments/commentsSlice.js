@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { trackForMutations } from "@reduxjs/toolkit/dist/immutableStateInvariantMiddleware";
 import axios from "axios";
 
 const initialState = {
@@ -41,11 +40,11 @@ const initialState = {
 // 	);
 // });
 
-export const fetchComments = createAsyncThunk("comments/fetchComments", () => {
+export const fetchComments = createAsyncThunk("comments/fetchComments", () =>
 	axios
 		.get("https://jsonplaceholder.typicode.com/comments")
-		.then((response) => response.data);
-});
+		.then((response) => response.data)
+);
 
 const commentSlice = createSlice({
 	name: "comments",
